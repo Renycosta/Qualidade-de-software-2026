@@ -40,17 +40,13 @@ Por exemplo: como a necessidade implícita o histórico de pedidos. Mesmo que a 
 
 ## 3. Tarefa 2: Exploração da aplicação
 
-> Cada integrante deve explorar uma funcionalidade, realizando uma utilização esperada e uma utilização alternativa, inválida ou incompleta. Acrescentem ou removam linhas conforme o número de integrantes.
-
 | Integrante | Funcionalidade | O que foi realizado | O que foi observado | Evidência |
 |---|---|---|---|---|
-| Reny | Favoritar | uso esperado: Ao clicar uma vez o restaurante e adicionado a lista de favoritos. uso alternativo: Ao clicar novamente em um restaurante favoritado deve impedir a duplicação ou informar que o restaurante já está favoritado. | Ao realizar o uso esperado ocorreu tudo como previsto, mas ao realizar o uso alternativo não ocorreu nenhuma das possibilidades, ele apenas continuou favoritado e não teve nenhum aviso dizendo que ele já estava favoritado | [ver evidência](evidencias/nome-do-arquivo.png) |
+| Reny | Favoritar | uso esperado: Ao clicar uma vez o restaurante e adicionado a lista de favoritos. uso alternativo: Ao clicar novamente em um restaurante favoritado deve impedir a duplicação ou informar que o restaurante já está favoritado. | Ao realizar o uso esperado ocorreu tudo como previsto, mas ao realizar o uso alternativo não ocorreu nenhuma das possibilidades, ele apenas continuou favoritado e não teve nenhum aviso dizendo que ele já estava favoritado | [ver evidência](evidencias/evidencias.pdf) |
 
 ---
 
 ## 4. Tarefa 3: Requisitos e características de qualidade
-
-> Cada integrante deve formular um requisito de qualidade relacionado à mesma funcionalidade explorada na Tarefa 2. Acrescentem ou removam linhas conforme o número de integrantes.
 
 | Integrante | Requisito de Qualidade | Característica ou subcaracterística | Justificativa | Como avaliar |
 |---|---|---|---|---|
