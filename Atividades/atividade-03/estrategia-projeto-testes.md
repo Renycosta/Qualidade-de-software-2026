@@ -51,18 +51,18 @@ Verificar se os usuários conseguem utilizar os filtros por categoria
 
 | Item | Definição |
 |---|---|
-| Ambiente necessário | [preencher] |
-| Responsáveis pelo planejamento | [preencher] |
-| Responsáveis pela especificação dos casos | [preencher] |
-| Responsáveis pela futura execução | [preencher] |
+| Ambiente necessário | Deve haver restaurantes cadastrados em diferentes categorias para possibilitar a realização dos testes. |
+| Responsáveis pelo planejamento | Equipe de QA/testes, responsável por definir o objetivo, escopo, cenários e condições necessárias para os testes do filtro por categoria. |
+| Responsáveis pela especificação dos casos | Equipe de QA/testes, responsável por documentar os casos de teste, entradas, passos de execução e resultados esperados. |
+| Responsáveis pela futura execução | Equipe de QA/testes, responsável por executar os casos definidos, registrar os resultados obtidos e documentar possíveis falhas encontradas. |
 
 ### 2.5 Critérios
 
 | Critério | Definição da equipe |
 |---|---|
-| Entrada | [O que precisa estar disponível antes do início dos testes?] |
-| Saída | [O que precisa ser atendido para considerar os testes concluídos?] |
-| Suspensão | [Em quais situações os testes deverão ser interrompidos?] |
+| Entrada | Aplicação Local Eats disponível e acessível; navegador funcionando e com conexão à internet; restaurantes cadastrados em diferentes categorias; categorias disponíveis para seleção, como Italiana, Japonesa, Brasileira e Mexicana. |
+| Saída | Todos os casos de teste planejados para o filtro foram executados e seus resultados registrados. O filtro deve apresentar corretamente os restaurantes correspondentes à categoria selecionada e a opção "Todos" deve apresentar todos os restaurantes disponíveis. |
+| Suspensão | Os testes deverão ser interrompidos caso a aplicação fique indisponível, ocorra uma falha que impeça a utilização do filtro, os dados dos restaurantes estejam indisponíveis/incorretos ou haja problemas de conexão que impossibilitem a execução confiável dos testes. |
 
 ---
 
