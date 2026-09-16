@@ -60,9 +60,9 @@ Verificar se os usuários conseguem utilizar os filtros por categoria
 
 | Critério | Definição da equipe |
 |---|---|
-| Entrada | Aplicação Local Eats disponível e acessível; navegador funcionando e com conexão à internet; restaurantes cadastrados em diferentes categorias; categorias disponíveis para seleção, como Italiana, Japonesa, Brasileira e Mexicana. |
-| Saída | Todos os casos de teste planejados para o filtro foram executados e seus resultados registrados. O filtro deve apresentar corretamente os restaurantes correspondentes à categoria selecionada e a opção "Todos" deve apresentar todos os restaurantes disponíveis. |
-| Suspensão | Os testes deverão ser interrompidos caso a aplicação fique indisponível, ocorra uma falha que impeça a utilização do filtro, os dados dos restaurantes estejam indisponíveis/incorretos ou haja problemas de conexão que impossibilitem a execução confiável dos testes. |
+| Entrada | Aplicação Local Eats disponível e acessível, navegador funcionando e com conexão à internet, restaurantes cadastrados em diferentes categorias, categorias disponíveis para seleção. |
+| Saída | Casos de teste executados e resultados registrados, com o filtro apresentando corretamente os restaurantes de cada categoria. |
+| Suspensão | Indisponibilidade do site, falha que impeça o uso do filtro ou ausência dos dados necessários para o teste. |
 
 ---
 
@@ -72,25 +72,31 @@ Verificar se os usuários conseguem utilizar os filtros por categoria
 
 | ID | Integrante | Funcionalidade | Risco | Consequência | Probabilidade | Impacto | Prioridade | Justificativa |
 |---|---|---|---|---|:---:|:---:|:---:|---|
-| R01 | Reny | [funcionalidade] | [o que pode dar errado] | [quem será afetado e como] | [Baixa/Média/Alta] | [Baixo/Médio/Alto] | [Baixa/Média/Alta] | [preencher] |
-| R02 | Reny | [funcionalidade] | [o que pode dar errado] | [quem será afetado e como] | [Baixa/Média/Alta] | [Baixo/Médio/Alto] | [Baixa/Média/Alta] | [preencher] |
+| R01 | Reny | Filtro por categoria | O sistema pode exibir restaurantes de categorias diferentes da selecionada. | Usuário, pois ele pode receber informações incorretas. | Média | Médio | Média | O erro afeta diretamente a principal finalidade do filtro e pode comprometer a experiência do usuário, mas não impede o funcionamento do site. |
+| R02 | Reny | Filtro por categoria | O filtro pode não responder ao ser selecionado. | Usuário, pois ele não conseguirá utilizar o filtro para encontrar restaurantes | Média | Alto | Alta | A funcionalidade ficará indisponível para o usuário, tornando impossível realizar a busca por categoria e comprometendo totalmente essa funcionalidade |
 
 ### 3.2 Aplicação das técnicas
 
-#### Análise do integrante 1
-
-**Integrante:** Reny  
-**Funcionalidade:** [preencher]  
-**Risco relacionado:** [R01]  
-**Técnica escolhida:** [particionamento de equivalência, análise de valor limite, tabela de decisão ou transição de estados]
+**Integrante:** Reny <br>
+**Funcionalidade:** Filtro de restaurantes por categoria <br> 
+**Risco relacionado:** R01 <br>  
+**Técnica escolhida:** Particionamento de equivalência <br>
 
 **Por que a técnica foi escolhida:**  
-[Expliquem por que a técnica é adequada à regra ou ao risco analisado.]
+A técnica é adequada porque o filtro possui diferentes categorias que devem produzir o mesmo tipo de comportamento: ao selecionar uma categoria, somente os restaurantes pertencentes a ela devem ser exibidos. Dessa forma, podemos selecionar algumas categorias representativas para verificar se o filtro funciona corretamente, sem a necessidade de testar todas as possibilidades.
 
 **Aplicação da técnica:**  
-[Apresentem as classes, limites, combinações ou transições identificadas. Utilizem uma tabela ou lista quando necessário.]
+| Classe de equivalência | Entrada | Comportamento esperado |
+|---|---|---|
+| Categoria válida | Italiana | Exibir somente restaurantes italianos |
+| Categoria válida | Japonesa | Exibir somente restaurantes japoneses |
+| Categoria válida | Brasileira | Exibir somente restaurantes brasileiros |
+| Categoria válida | Mexicana | Exibir somente restaurantes mexicanos |
+| Categoria geral | Todos | Exibir restaurantes de todas as categorias |
 
-**Casos derivados:** [CT01 e CT02]
+**Casos derivados:** <br>
+CT01: utiliza a categoria Italiana para verificar se somente restaurantes da categoria selecionada são apresentados. <br>
+CT02: utiliza as categorias Japonesa e Mexicana para verificar se o sistema atualiza corretamente os resultados quando o usuário troca de categoria. <br>
 
 ---
 
@@ -98,75 +104,75 @@ Verificar se os usuários conseguem utilizar os filtros por categoria
 
 ### 4.1 Casos de teste
 
-### CT01: [Título do caso]
+### CT01: Filtrar restaurantes por categoria
 
-**Integrante responsável:** Reny
-**Funcionalidade:** [preencher]  
-**Risco ou requisito relacionado:** [R01 ou descrição do requisito]  
-**Técnica utilizada:** [preencher]
+**Integrante responsável:** Reny <br>
+**Funcionalidade:** Filtro de restaurantes por categoria <br>
+**Risco ou requisito relacionado:** R01 <br>  
+**Técnica utilizada:** Particionamento de equivalência <br>
 
 **Pré-condição:**  
-[O que precisa existir ou estar preparado antes da execução.]
+A aplicação deve estar disponível e possuir restaurantes cadastrados em diferentes categorias.
 
 **Dados de entrada:**  
-[Valores ou dados necessários. Caso não sejam necessários, registrem “Não se aplica”.]
+Categoria: Italiana
 
 **Passos:**
 
-1. [Primeiro passo.]
-2. [Segundo passo.]
-3. [Terceiro passo.]
+1. Acessar a página inicial do Local Eats.
+2. Localizar os filtros de categoria.
+3. Selecionar a categoria "Italiana".
 
 **Resultado esperado:**  
-[Comportamento observável que indicará que o teste passou.]
+O sistema deve exibir somente restaurantes pertencentes à categoria Italiana, não apresentando restaurantes de outras categorias.
 
 ---
 
-### CT02: [Título do caso]
+### CT02: Alternar entre diferentes categorias
 
-**Integrante responsável:** Reny
-**Funcionalidade:** [preencher]  
-**Risco ou requisito relacionado:** [preencher]  
-**Técnica utilizada:** [preencher]
+**Integrante responsável:** Reny <br>
+**Funcionalidade:** Filtro de restaurantes por categoria <br>
+**Risco ou requisito relacionado:** R02 <br>
+**Técnica utilizada:** Particionamento de equivalência <br>
 
 **Pré-condição:**  
-[preencher]
+A aplicação deve estar disponível e possuir restaurantes cadastrados nas categorias que serão utilizadas no teste.
 
 **Dados de entrada:**  
-[preencher]
+Categorias: Japonesa e Mexicana
 
 **Passos:**
 
-1. [Primeiro passo.]
-2. [Segundo passo.]
-3. [Terceiro passo.]
+1. Acessar a página inicial do Local Eats.
+2. Selecionar a categoria "Japonesa" e observar os restaurantes apresentados.
+3. Em seguida, selecionar a categoria "Mexicana".
 
 **Resultado esperado:**  
-[preencher]
+Ao selecionar "Japonesa", devem ser exibidos os restaurantes dessa categoria. Ao selecionar "Mexicana", a lista deve ser atualizada e apresentar os restaurantes correspondentes à nova categoria, sem manter incorretamente os resultados anteriores.
 
 ---
 
-### CT03: [Título do caso]
+### CT03: Exibir todos os restaurantes
 
-**Integrante responsável:** Reny
-**Funcionalidade:** [preencher]  
-**Risco ou requisito relacionado:** [preencher]  
-**Técnica utilizada:** [preencher]
+**Integrante responsável:** Reny <br>
+**Funcionalidade:** Filtro de restaurantes por categoria <br>
+**Risco ou requisito relacionado:** Requisito funcional — A opção "Todos" deve permitir visualizar restaurantes de todas as categorias. <br>
+**Técnica utilizada:** Análise de valores-limite <br>
 
 **Pré-condição:**  
-[preencher]
+A aplicação deve estar disponível e possuir restaurantes cadastrados em mais de uma categoria.
 
 **Dados de entrada:**  
-[preencher]
+Categoria: Todos
 
 **Passos:**
 
-1. [Primeiro passo.]
-2. [Segundo passo.]
-3. [Terceiro passo.]
+1. Acessar a página inicial do Local Eats.
+2. Selecionar uma categoria específica, como "Brasileira".
+3. Selecionar a opção "Todos".
 
 **Resultado esperado:**  
-[preencher]
+Após selecionar "Todos", o sistema deve remover a restrição de categoria e exibir novamente os restaurantes disponíveis de todas as categorias.
 
 ---
 
@@ -174,7 +180,7 @@ Verificar se os usuários conseguem utilizar os filtros por categoria
 
 | Integrante | Funcionalidade | Risco ou requisito | Técnica utilizada | Casos de teste |
 |---|---|---|---|---|
-| Reny | [funcionalidade] | [R01 ou requisito] | [técnica] | [CT01 e CT02] |
+| Reny | Filtro de restaurantes por categoria | R01 — O sistema pode exibir restaurantes de categorias diferentes da selecionada. R02 — O filtro pode não responder ou deixar de atualizar a lista de restaurantes. | Particionamento de equivalência | CT01 e CT02 |
 
 ---
 
