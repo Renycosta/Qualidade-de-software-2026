@@ -57,4 +57,4 @@ Por exemplo: como a necessidade implícita o histórico de pedidos. Mesmo que a 
 ## 5. Uso de inteligência artificial
 
 **Ferramenta utilizada:**  
-Não utilizada
+Utilizada para correção de gramatica e correção de texto.
