@@ -90,4 +90,4 @@ Uma versão pode ser disponibilizada mesmo apresentando defeitos ou sem que todo
 ## 5. Uso de inteligência artificial
 
 **Ferramenta utilizada:**  
-Não utilizada
+Utilizada para correção de gramatica e correção de texto.

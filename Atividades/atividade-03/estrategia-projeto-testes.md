@@ -1,21 +1,16 @@
 # Atividade 3: Estratégia e Projeto de Testes do LocalEats
 
-> Substituam os campos entre colchetes pelas respostas da equipe e removam as instruções antes da entrega.
-
 ## 1. Identificação
 
-**Turma:** [preencher]  
-**Equipe:** [preencher, se aplicável]  
-**Data:** [dd/mm/aaaa]
+**Turma:** ADS 4º Semestre Manhã (Pelotas)  
+**Equipe:** Reny Brito da Costa  
+**Data:** 15/09/2026
 
 ### Integrantes
 
 | Nome | Usuário no GitHub |
 |---|---|
-| [nome] | [@usuario] |
-| [nome] | [@usuario] |
-| [nome] | [@usuario] |
-| [nome] | [@usuario] |
+| Reny Brito da Costa | [@Renycosta](https://github.com/Renycosta) |
 
 **Elemento de Competência:** Planejar e projetar testes selecionando técnicas adequadas.
 
@@ -27,7 +22,7 @@
 
 ### 2.1 Objetivo dos testes
 
-[Expliquem brevemente o que a equipe pretende verificar com os testes.]
+Verificar se os usuários conseguem utilizar os filtros por categoria 
 
 ### 2.2 Escopo
 
@@ -35,44 +30,39 @@
 
 | Integrante | Funcionalidade incluída | O que será verificado |
 |---|---|---|
-| [nome] | [funcionalidade] | [preencher] |
-| [nome] | [funcionalidade] | [preencher] |
-| [nome] | [funcionalidade] | [preencher] |
-| [nome] | [funcionalidade] | [preencher] |
-
-> Acrescentem ou removam linhas conforme o número de integrantes.
+| Reny | Filtro de restaurantes por categoria | Ao selecionar uma categoria (Italiana, Japonesa, Brasileira ou Mexicana), o sistema exibe corretamente apenas os restaurantes pertencentes à categoria selecionada. Também será verificado se a opção "Todos" retorna a exibição de padrão. |
 
 #### Funcionalidade não incluída
 
 | Funcionalidade não incluída | Justificativa |
 |---|---|
-| [preencher] | [preencher] |
+| Busca por nome | O objetivo do teste é unicamente analisar o funcionamento do filtro. A funcionalidade de busca por nome não está realmente associada com o filtro,  mesmo que ambos sejam responsaveis pela pesquisa de restaurante.|
 
 ### 2.3 Abordagem
 
 | Item | Decisão da equipe | Justificativa |
 |---|---|---|
-| Níveis de teste | [preencher] | [preencher] |
-| Tipos de teste | [preencher] | [preencher] |
-| Perspectiva caixa-preta ou caixa-branca | [preencher] | [preencher] |
-| Técnicas de teste | [preencher] | [preencher] |
+| Níveis de teste | Teste de sistema | O filtro será avaliado diretamente na aplicação, verificando seu funcionamento integrado à interface e aos dados dos restaurantes. |
+| Tipos de teste | Teste funcional | Será verificado se o sistema apresenta os restaurantes correspondentes à categoria selecionada. |
+| Perspectiva | Caixa-preta | A funcionalidade será analisada por meio dos resultados apresentados pelo sistema, sem analisar o código em si. |
+| Técnicas de teste | Particionamento de equivalência | Permite testar diferentes categorias e comportamentos do filtro sem precisar testar todas as combinações possíveis. |
 
 ### 2.4 Ambiente e responsabilidades
 
 | Item | Definição |
 |---|---|
-| Ambiente necessário | [preencher] |
-| Responsáveis pelo planejamento | [preencher] |
-| Responsáveis pela especificação dos casos | [preencher] |
-| Responsáveis pela futura execução | [preencher] |
+| Ambiente necessário | Deve haver restaurantes cadastrados em diferentes categorias para possibilitar a realização dos testes. |
+| Responsáveis pelo planejamento | Equipe de QA/testes, responsável por definir o objetivo, escopo, cenários e condições necessárias para os testes do filtro por categoria. |
+| Responsáveis pela especificação dos casos | Equipe de QA/testes, responsável por documentar os casos de teste, entradas, passos de execução e resultados esperados. |
+| Responsáveis pela futura execução | Equipe de QA/testes, responsável por executar os casos definidos, registrar os resultados obtidos e documentar possíveis falhas encontradas. |
 
 ### 2.5 Critérios
 
 | Critério | Definição da equipe |
 |---|---|
-| Entrada | [O que precisa estar disponível antes do início dos testes?] |
-| Saída | [O que precisa ser atendido para considerar os testes concluídos?] |
-| Suspensão | [Em quais situações os testes deverão ser interrompidos?] |
+| Entrada | Aplicação Local Eats disponível e acessível, navegador funcionando e com conexão à internet, restaurantes cadastrados em diferentes categorias, categorias disponíveis para seleção. |
+| Saída | Casos de teste executados e resultados registrados, com o filtro apresentando corretamente os restaurantes de cada categoria. |
+| Suspensão | Indisponibilidade do site, falha que impeça o uso do filtro ou ausência dos dados necessários para o teste. |
 
 ---
 
@@ -80,50 +70,33 @@
 
 ### 3.1 Análise dos riscos
 
-> Cada integrante deve analisar pelo menos um risco relacionado à funcionalidade escolhida. No trabalho individual, devem ser analisados dois riscos.
-
 | ID | Integrante | Funcionalidade | Risco | Consequência | Probabilidade | Impacto | Prioridade | Justificativa |
 |---|---|---|---|---|:---:|:---:|:---:|---|
-| R01 | [nome] | [funcionalidade] | [o que pode dar errado] | [quem será afetado e como] | [Baixa/Média/Alta] | [Baixo/Médio/Alto] | [Baixa/Média/Alta] | [preencher] |
-| R02 | [nome] | [funcionalidade] | [o que pode dar errado] | [quem será afetado e como] | [Baixa/Média/Alta] | [Baixo/Médio/Alto] | [Baixa/Média/Alta] | [preencher] |
-
-> Acrescentem as linhas necessárias e mantenham identificadores únicos: R01, R02, R03 etc.
+| R01 | Reny | Filtro por categoria | O sistema pode exibir restaurantes de categorias diferentes da selecionada. | Usuário, pois ele pode receber informações incorretas. | Média | Médio | Média | O erro afeta diretamente a principal finalidade do filtro e pode comprometer a experiência do usuário, mas não impede o funcionamento do site. |
+| R02 | Reny | Filtro por categoria | O filtro pode não responder ao ser selecionado. | Usuário, pois ele não conseguirá utilizar o filtro para encontrar restaurantes | Média | Alto | Alta | A funcionalidade ficará indisponível para o usuário, tornando impossível realizar a busca por categoria e comprometendo totalmente essa funcionalidade |
 
 ### 3.2 Aplicação das técnicas
 
-> Cada integrante deve aplicar pelo menos uma técnica adequada à funcionalidade e ao risco analisado. A equipe deve utilizar, no conjunto da atividade, pelo menos duas técnicas diferentes.
-
-#### Análise do integrante 1
-
-**Integrante:** [nome]  
-**Funcionalidade:** [preencher]  
-**Risco relacionado:** [R01]  
-**Técnica escolhida:** [particionamento de equivalência, análise de valor limite, tabela de decisão ou transição de estados]
+**Integrante:** Reny <br>
+**Funcionalidade:** Filtro de restaurantes por categoria <br> 
+**Risco relacionado:** R01 <br>  
+**Técnica escolhida:** Particionamento de equivalência <br>
 
 **Por que a técnica foi escolhida:**  
-[Expliquem por que a técnica é adequada à regra ou ao risco analisado.]
+A técnica é adequada porque o filtro possui diferentes categorias que devem produzir o mesmo tipo de comportamento: ao selecionar uma categoria, somente os restaurantes pertencentes a ela devem ser exibidos. Dessa forma, podemos selecionar algumas categorias representativas para verificar se o filtro funciona corretamente, sem a necessidade de testar todas as possibilidades.
 
 **Aplicação da técnica:**  
-[Apresentem as classes, limites, combinações ou transições identificadas. Utilizem uma tabela ou lista quando necessário.]
+| Classe de equivalência | Entrada | Comportamento esperado |
+|---|---|---|
+| Categoria válida | Italiana | Exibir somente restaurantes italianos |
+| Categoria válida | Japonesa | Exibir somente restaurantes japoneses |
+| Categoria válida | Brasileira | Exibir somente restaurantes brasileiros |
+| Categoria válida | Mexicana | Exibir somente restaurantes mexicanos |
+| Categoria geral | Todos | Exibir restaurantes de todas as categorias |
 
-**Casos derivados:** [CT01 e CT02]
-
-#### Análise do integrante 2
-
-**Integrante:** [nome]  
-**Funcionalidade:** [preencher]  
-**Risco relacionado:** [R02]  
-**Técnica escolhida:** [preencher]
-
-**Por que a técnica foi escolhida:**  
-[preencher]
-
-**Aplicação da técnica:**  
-[preencher]
-
-**Casos derivados:** [preencher]
-
-> Repitam ou removam a seção de análise conforme o número de integrantes.
+**Casos derivados:** <br>
+CT01: utiliza a categoria Italiana para verificar se somente restaurantes da categoria selecionada são apresentados. <br>
+CT02: utiliza as categorias Japonesa e Mexicana para verificar se o sistema atualiza corretamente os resultados quando o usuário troca de categoria. <br>
 
 ---
 
@@ -131,79 +104,87 @@
 
 ### 4.1 Casos de teste
 
-> No trabalho individual, elabore três casos. No trabalho em equipe, cada integrante deve elaborar pelo menos dois casos relacionados à própria funcionalidade.
+### CT01: Filtrar restaurantes por categoria
 
-### CT01: [Título do caso]
-
-**Integrante responsável:** [nome]  
-**Funcionalidade:** [preencher]  
-**Risco ou requisito relacionado:** [R01 ou descrição do requisito]  
-**Técnica utilizada:** [preencher]
+**Integrante responsável:** Reny <br>
+**Funcionalidade:** Filtro de restaurantes por categoria <br>
+**Risco ou requisito relacionado:** R01 <br>  
+**Técnica utilizada:** Particionamento de equivalência <br>
 
 **Pré-condição:**  
-[O que precisa existir ou estar preparado antes da execução.]
+A aplicação deve estar disponível e possuir restaurantes cadastrados em diferentes categorias.
 
 **Dados de entrada:**  
-[Valores ou dados necessários. Caso não sejam necessários, registrem “Não se aplica”.]
+Categoria: Italiana
 
 **Passos:**
 
-1. [Primeiro passo.]
-2. [Segundo passo.]
-3. [Terceiro passo.]
+1. Acessar a página inicial do Local Eats.
+2. Localizar os filtros de categoria.
+3. Selecionar a categoria "Italiana".
 
 **Resultado esperado:**  
-[Comportamento observável que indicará que o teste passou.]
+O sistema deve exibir somente restaurantes pertencentes à categoria Italiana, não apresentando restaurantes de outras categorias.
 
 ---
 
-### CT02: [Título do caso]
+### CT02: Alternar entre diferentes categorias
 
-**Integrante responsável:** [nome]  
-**Funcionalidade:** [preencher]  
-**Risco ou requisito relacionado:** [preencher]  
-**Técnica utilizada:** [preencher]
+**Integrante responsável:** Reny <br>
+**Funcionalidade:** Filtro de restaurantes por categoria <br>
+**Risco ou requisito relacionado:** R02 <br>
+**Técnica utilizada:** Particionamento de equivalência <br>
 
 **Pré-condição:**  
-[preencher]
+A aplicação deve estar disponível e possuir restaurantes cadastrados nas categorias que serão utilizadas no teste.
 
 **Dados de entrada:**  
-[preencher]
+Categorias: Japonesa e Mexicana
 
 **Passos:**
 
-1. [Primeiro passo.]
-2. [Segundo passo.]
-3. [Terceiro passo.]
+1. Acessar a página inicial do Local Eats.
+2. Selecionar a categoria "Japonesa" e observar os restaurantes apresentados.
+3. Em seguida, selecionar a categoria "Mexicana".
 
 **Resultado esperado:**  
-[preencher]
+Ao selecionar "Japonesa", devem ser exibidos os restaurantes dessa categoria. Ao selecionar "Mexicana", a lista deve ser atualizada e apresentar os restaurantes correspondentes à nova categoria, sem manter incorretamente os resultados anteriores.
 
 ---
 
-> Copiem o modelo acima e continuem a numeração para criar os demais casos: CT03, CT04, CT05 etc.
+### CT03: Exibir todos os restaurantes
+
+**Integrante responsável:** Reny <br>
+**Funcionalidade:** Filtro de restaurantes por categoria <br>
+**Risco ou requisito relacionado:** Requisito funcional — A opção "Todos" deve permitir visualizar restaurantes de todas as categorias. <br>
+**Técnica utilizada:** Análise de valores-limite <br>
+
+**Pré-condição:**  
+A aplicação deve estar disponível e possuir restaurantes cadastrados em mais de uma categoria.
+
+**Dados de entrada:**  
+Categoria: Todos
+
+**Passos:**
+
+1. Acessar a página inicial do Local Eats.
+2. Selecionar uma categoria específica, como "Brasileira".
+3. Selecionar a opção "Todos".
+
+**Resultado esperado:**  
+Após selecionar "Todos", o sistema deve remover a restrição de categoria e exibir novamente os restaurantes disponíveis de todas as categorias.
+
+---
 
 ### 4.2 Matriz de rastreabilidade
 
 | Integrante | Funcionalidade | Risco ou requisito | Técnica utilizada | Casos de teste |
 |---|---|---|---|---|
-| [nome] | [funcionalidade] | [R01 ou requisito] | [técnica] | [CT01 e CT02] |
-| [nome] | [funcionalidade] | [R02 ou requisito] | [técnica] | [CT03 e CT04] |
-
-> Acrescentem as linhas necessárias. Verifiquem se todos os riscos selecionados possuem casos de teste relacionados.
+| Reny | Filtro de restaurantes por categoria | R01 — O sistema pode exibir restaurantes de categorias diferentes da selecionada. R02 — O filtro pode não responder ou deixar de atualizar a lista de restaurantes. | Particionamento de equivalência | CT01 e CT02 |
 
 ---
 
 ## 5. Uso de inteligência artificial
 
 **Ferramenta utilizada:**  
-[Informar a ferramenta ou registrar “não utilizada”.]
-
-**Como foi utilizada:**  
-[Descrever brevemente.]
-
-**Uma sugestão que precisou ser alterada ou rejeitada:**  
-[Descrever brevemente. Caso nenhuma sugestão tenha sido rejeitada, expliquem como as sugestões foram analisadas criticamente.]
-
-**Como as respostas foram verificadas:**  
-[Descrever brevemente.]
+Utilizada para correção de gramatica e correção de texto.
