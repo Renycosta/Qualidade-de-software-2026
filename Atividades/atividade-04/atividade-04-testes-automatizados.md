@@ -6,195 +6,88 @@
 
 ## 1. Identificação
 
-- **Turma:** [informar]
-- **Modalidade:** [individual / dupla / trio / equipe de quatro integrantes]
-- **Repositório:** [colar o link do repositório]
-- **Diretório da atividade:** [colar o link direto para este diretório]
-- **Data da última execução:** [dd/mm/aaaa]
+- **Turma:** ADS 4º Semestre Manhã (Pelotas)
+- **Modalidade:** Individual
+- **Repositório:** https://github.com/Renycosta/Qualidade-de-software-2026/tree/main/Atividades
+- **Diretório da atividade:** https://github.com/Renycosta/Qualidade-de-software-2026/tree/main/Atividades/atividade-04
+- **Data da última execução:** 10/11/2026
 
 ### Integrantes
 
-1. [Nome completo]
-2. [Nome completo, se houver]
-3. [Nome completo, se houver]
-4. [Nome completo, se houver]
-
+1. Reny Brito da Costa
 ---
 
 ## 2. Integrantes e responsabilidades
 
-Preencha uma linha para cada teste. Os testes unitários devem usar identificadores `TU01`, `TU02` e seguintes. Os testes funcionais devem usar `TF01`, `TF02` e seguintes.
-
 | ID | Integrante responsável | Tipo | Comportamento verificado | Arquivo e função de teste |
 |---|---|---|---|---|
-| TU01 | [nome] | Unitário | [comportamento] | `tests/test_regras_localeats.py::test_nome` |
-| TU02 | [nome] | Unitário | [comportamento] | `tests/test_regras_localeats.py::test_nome` |
-| TF01 | [nome] | Funcional | [comportamento] | `tests/test_localeats.py::test_nome` |
-
-> Adicione as linhas necessárias conforme a quantidade de integrantes.
-
-### Quantidades mínimas
-
-- **Individual:** uma função, dois testes unitários e um teste funcional.
-- **Dupla:** duas funções, quatro testes unitários e dois testes funcionais.
-- **Trio:** três funções, seis testes unitários e três testes funcionais.
-- **Equipe de quatro:** quatro funções, oito testes unitários e quatro testes funcionais.
-
-Cada teste funcional deve possuir pelo menos duas assertions. Integrantes da mesma equipe devem escolher regras e fluxos diferentes.
+| TU01 | Reny | Unitário | Verifica se uma quantidade entre 1 e 10 é considerada válida | `tests/test_regras_localeats.py::test_quantidade_itens_valida` |
+| TU02 | Reny | Unitário | Verifica se uma quantidade negativa gera uma exceção ValueError | `tests/test_regras_localeats.py::test_quantidade_itens_negativa` |
+| TF01 | Reny | Funcional | Verifica a apresentação da tela de login e o preenchimento do campo de e-mail | `tests/test_localeats.py::test_apresentacao_tela_login` |
 
 ---
 
 ## 3. Testes unitários
 
-Cada integrante deve escolher uma regra diferente, implementar a função correspondente e criar pelo menos dois testes unitários.
-
-### Regras disponíveis
-
-#### Regra 1: valor mínimo do pedido
-
-```python
-pedido_atingiu_valor_minimo(valor_pedido)
-```
-
-- Retorna `True` para pedidos de R$ 30,00 ou mais.
-- Retorna `False` para pedidos abaixo de R$ 30,00.
-- Gera `ValueError` para valores negativos.
-
-#### Regra 2: desconto do pedido
-
-```python
-calcular_desconto(valor_pedido)
-```
-
-- Retorna `0` para pedidos abaixo de R$ 100,00.
-- Retorna 10% do valor para pedidos de R$ 100,00 ou mais.
-- Retorna apenas o valor do desconto.
-- Gera `ValueError` para valores negativos.
-
-#### Regra 3: quantidade de itens
-
-```python
-quantidade_itens_valida(quantidade)
-```
-
-- Retorna `True` para quantidades entre 1 e 10.
-- Retorna `False` para zero ou quantidades acima de 10.
-- Gera `ValueError` para quantidades negativas.
-
-#### Regra 4: avaliação do restaurante
-
-```python
-avaliacao_valida(nota)
-```
-
-- Retorna `True` para notas entre 1 e 5.
-- Retorna `False` para notas abaixo de 1 ou acima de 5.
-
 ### Registro das regras implementadas
 
-#### Regra de [nome do integrante]
+#### Regra de Reny
 
-- **Regra escolhida:** [informar]
-- **Função implementada:** `[nome da função]`
-- **Arquivo da implementação:** [`src/regras_localeats.py` ou outro caminho]
-- **Testes criados:** [`nome do primeiro teste`; `nome do segundo teste`]
-- **Comportamentos verificados:** [descrever brevemente]
-
-> Repita esta subseção para cada integrante.
+- **Regra escolhida:** Validar a quantidade de itens permitida, aceitando valores entre 1 e 10, rejeitando zero e valores superiores a 10 e gerando uma exceção para quantidades negativas
+- **Função implementada:** `quantidade_itens_valida`
+- **Arquivo da implementação:** `src/regras_localeats.py`
+- **Testes criados:** `test_quantidade_itens_valida`; `test_quantidade_itens_negativa`
+- **Comportamentos verificados:** Verifica se uma quantidade válida retorna True e se uma quantidade negativa gera a exceção ValueError
 
 ---
 
 ## 4. Aplicação do TDD
 
-Cada integrante deve registrar de forma breve o desenvolvimento orientado a testes da própria regra.
+### TDD de Reny
 
-### TDD de [nome do integrante]
-
-- **Regra escolhida:** [informar]
-- **Primeiro teste escrito:** `[nome da função de teste]`
-- **Por que o teste falhou inicialmente:** [explicar]
-- **Implementação mínima realizada:** [explicar]
-- **Segundo teste escrito:** `[nome da função de teste]`
-- **Melhoria ou refatoração realizada:** [explicar ou informar que não foi necessária]
-
-> Repita esta subseção para cada integrante.
-
+- **Regra escolhida:** Validar a quantidade de itens permitida pelo sistema, considerando o intervalo de 1 a 10
+- **Primeiro teste escrito:** `test_quantidade_itens_valida`
+- **Por que o teste falhou inicialmente:** O teste falhou porque a função ainda não havia sido implementada, portanto não existia uma lógica para validar a quantidade de itens
+- **Implementação mínima realizada:** Foi criada a função quantidade_itens_valida, responsável por verificar se a quantidade está dentro do intervalo permitido e retornar True ou False
+- **Segundo teste escrito:** `test_quantidade_itens_negativa`
+- **Melhoria ou refatoração realizada:** Foi adicionada uma condição para identificar quantidades negativas e gerar uma exceção ValueError, garantindo o tratamento adequado desse tipo de entrada
 ---
 
 ## 5. Testes funcionais com Playwright
 
-Cada integrante deve automatizar um fluxo diferente pela interface do LocalEats.
-
 **Sistema:** https://local-eats-unisenac.vercel.app/
 
-### Fluxos possíveis
-
-- verificar a apresentação da página inicial;
-- pesquisar um restaurante;
-- selecionar uma categoria;
-- verificar restaurantes de uma categoria;
-- verificar informações apresentadas em um restaurante;
-- criar uma conta ou entrar no sistema, se o fluxo estiver disponível;
-- favoritar ou desfavoritar um restaurante;
-- consultar pedidos;
-- automatizar outro comportamento estável identificado durante a exploração.
-
-### Requisitos de cada teste funcional
-
-- acessar o LocalEats;
-- realizar pelo menos uma interação pela interface;
-- utilizar locators do Playwright;
-- possuir pelo menos duas assertions;
-- verificar resultados observáveis;
-- não utilizar `time.sleep`;
-- executar com pytest;
-- identificar o integrante responsável no código.
-
-### Teste funcional de [nome do integrante]
+### Teste funcional de Reny
 
 - **ID:** `TF01`
-- **Fluxo automatizado:** [descrever]
-- **Interação realizada:** [descrever]
-- **Primeira assertion:** [descrever o resultado verificado]
-- **Segunda assertion:** [descrever o resultado verificado]
-- **Arquivo e função:** `tests/test_localeats.py::test_nome`
-- **Resultado final:** [aprovado / reprovado]
-
-> Repita esta subseção para cada integrante.
+- **Fluxo automatizado:** Acessar a página inicial do LocalEats e verificar a apresentação da tela de login
+- **Interação realizada:** O teste localiza o campo de e-mail e preenche com o endereço teste@teste.com
+- **Primeira assertion:** Verifica se o campo de e-mail está visível na tela
+- **Segunda assertion:** Verifica se o e-mail foi preenchido corretamente no campo após a interação
+- **Arquivo e função:** `tests/test_localeats.py::test_apresentacao_tela_login`
+- **Resultado final:** Aprovado
 
 ---
 
 ## 6. Resultado da execução
 
-Execute todos os testes no PowerShell:
-
-```powershell
-python -m pytest -v | Tee-Object -FilePath relatorio-pytest.txt
-```
-
-Depois, registre o resultado:
-
-- **Quantidade total de testes:** [informar]
-- **Testes aprovados:** [informar]
-- **Testes reprovados:** [informar]
+- **Quantidade total de testes:** 3
+- **Testes aprovados:** 3
+- **Testes reprovados:** 0
 - **Link para o relatório:** [relatorio-pytest.txt](relatorio-pytest.txt)
-- **Observações:** [informar falhas conhecidas ou escrever “Todos os testes foram aprovados”]
+- **Observações:** Todos os testes foram aprovados
 
 ---
 
 ## 7. Explicações individuais
 
-Cada integrante deve escolher um teste de sua responsabilidade e demonstrar compreensão sobre o código entregue.
+### Explicação do teste de Reny
 
-### Explicação do teste de [nome do integrante]
-
-- **Teste escolhido:** `[nome da função de teste]`
-- **Comportamento verificado:** [explicar]
-- **Dados ou estado inicial:** [explicar]
-- **Resultado esperado:** [explicar]
-- **O que faria o teste falhar:** [explicar]
-
-> Repita esta subseção para cada integrante.
+- **Teste escolhido:** `test_quantidade_itens_valida`
+- **Comportamento verificado:** Verifica se a função consegue identificar corretamente uma quantidade de itens dentro do intervalo permitido pelo sistema
+- **Dados ou estado inicial:** A função recebe o valor inteiro 5, representando a quantidade de itens
+- **Resultado esperado:** A função deve retornar True, pois cinco está dentro do intervalo permitido, entre 1 e 10
+- **O que faria o teste falhar:** O teste falharia caso a função retornasse False, apresentasse uma exceção inesperada ou não reconhecesse corretamente uma quantidade válida
 
 ---
 
@@ -202,8 +95,5 @@ Cada integrante deve escolher um teste de sua responsabilidade e demonstrar comp
 
 O uso de inteligência artificial é permitido como apoio, mas todo o conteúdo e código devem ser revisados, executados e compreendidos pela equipe.
 
-- **Ferramenta utilizada:** [informar ou escrever “Não utilizada”]
-- **Como a ferramenta foi utilizada:** [informar]
-- **Uma sugestão que precisou ser alterada ou rejeitada:** [informar]
-- **Motivo da alteração ou rejeição:** [informar]
-- **Como o código sugerido foi verificado:** [informar testes, execução e revisão realizados]
+Ferramenta utilizada:
+Utilizada para correção de gramatica e correção de texto.
